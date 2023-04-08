@@ -40,13 +40,13 @@ const remove = () => {
 
 <style scoped>
 .footer {
-  width: 768px;
+  width: calc(768px - 16px);
   height: 64px;
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
-  padding: 8px 16px;
-  border-top: 1px solid black;
+  align-items: center;
+  padding: 8px 8px 8px;
+  border-top: 5px solid #f7f7f7;
 }
 
 .footer label input {

@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <Header :length="24" @create="append"/>
+    <Header :length="32" @create="append"/>
     <List :todos="todos"/>
     <Footer :todos="todos" @clean="clean"/>
   </div>
@@ -53,6 +53,7 @@ provide('remove', remove);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  align-items: center;
   box-shadow: 0 0 21px rgba(0, 0, 0, 0.07);
 }
 </style>
