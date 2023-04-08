@@ -1,5 +1,5 @@
 <template>
-  <div class="search">
+  <div class="create">
     <input type="text" placeholder="输入任务, 回车确认..."
            :maxlength="props.length" v-model="title" @keyup.enter="append">
     <span ref="span">
@@ -47,7 +47,7 @@ const append = () => {
 </script>
 
 <style scoped>
-.search {
+.create {
   width: 768px;
   height: 64px;
   line-height: 48px;
@@ -55,14 +55,14 @@ const append = () => {
   padding: 8px;
 }
 
-.search input {
+.create input {
   width: 100%;
   height: 100%;
   font-size: 16px;
   text-indent: 20px;
 }
 
-.search span {
+.create span {
   color: gray;
   position: absolute;
   right: 24px;

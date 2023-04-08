@@ -1,33 +1,51 @@
-# Vue 3 + TypeScript + Vite
+# TodoList
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue
-3 `<script setup>` SFCs, check out
-the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## 运用技术
 
-## Recommended IDE Setup
+1. 使用`vite`构建项目
+2. `vue3`框架
+3. `typescript`类型
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (
-  and disable Vetur)
-  + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin)
-  .
+## 知识点
 
-## Type Support For `.vue` Imports in TS
+1. 组件通信
+2. 侦听器
+3. 动态类名
+4. 依赖注入
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for
-type checking. In editors, we
-need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin)
-to make the TypeScript language service aware of `.vue` types.
+---
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented
-a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more
-performant. You can enable it by the following steps:
+## 描述
 
-1. Disable the built-in TypeScript Extension
-    1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+初学者学习此项目可以快速上手`vue3`，理解之后可快速掌握`vue3`核心知识点,列如: 组件通信`props、emits`, 侦听`watch`, 依赖注入`provide、inject`...
 
-# Use
+## 项目
 
-1. `npm install`
-2. `npm run dev`
+整理分为四个组件:
+
+1. `header` 顶部任务创建
+2. `footer` 顶部状态及管理
+3. `list` 任务列表
+4. `item` 列表项
+
+---
+
+## 构建与使用
+
+1. 安装
+
+```npm
+npm install
+```
+
+2. 使用
+
+```npm
+npm run dev
+```
+
+3. 构建
+
+```npm
+npm run build
+```
