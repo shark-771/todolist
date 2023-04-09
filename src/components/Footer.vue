@@ -1,21 +1,21 @@
 <template>
   <div class="footer">
     <label>
-      <input type="checkbox" @click="select(choose)" v-model="choose">
+      <input type="checkbox" v-model="choose">
       <span>完成 {{ count }} / 总计 {{ todos.length }}</span>
     </label>
-    <button @click="remove">清除已完成</button>
+    <button @click="emits('clean')">清除已完成</button>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { computed } from 'vue';
 
-// 通信
+/** 接收父组件传值 */
 const props = defineProps<{ todos: TodoType.Todo[] }>();
+/** 事件方法 */
 const emits = defineEmits(['clean']);
-
-// todos info
+/** 总计 */
 const count = computed(() => {
   let size = 0;
   // count
@@ -24,18 +24,19 @@ const count = computed(() => {
   });
   return size;
 });
-const choose = computed(() => {
-  return count.value === props.todos.length;
-});
-// 全选
-const select = (flag: boolean) => {
-  props.todos.forEach((todo) => {
-    todo.selected = !flag;
-  });
-};
-const remove = () => {
-  emits('clean');
-};
+/** checkbox value */
+const choose = computed({
+  // getter
+  get() {
+    return count.value === props.todos.length
+  },
+  // setter
+  set(value) {
+      /** 全选 or 全不选 */
+      props.todos.forEach((todo) => todo.selected = value)
+  }
+})
+
 </script>
 
 <style scoped>

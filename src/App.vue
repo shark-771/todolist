@@ -13,37 +13,33 @@ import List from './components/List.vue';
 import { onMounted, provide, ref, watch } from 'vue';
 import storage from './util/storage';
 
-// task list
+/** todos data */
 const todos = ref<TodoType.Todo[]>([]);
-/*// 计算已完成
-const info = computed(() => {
-  let count = 0;
-  let length = todos.value.length;
-  // foreach
-  todos.value.forEach((todo) => {
-    if (todo.selected) count++;
-  });
-  return { count, length };
-});*/
-// func append
+/** 新建待办 */
 const append = (todo: TodoType.Todo) => {
   todos.value.push(todo);
 };
-// remove
+/** 删除待办 */
 const remove = (id: number) => {
   todos.value = todos.value.filter((todo) => todo.id !== id);
 };
-// remove
+/** 清除已完成待办 */
 const clean = () => {
   todos.value = todos.value.filter((todo) => !todo.selected);
 };
+/** 获取存储数据 */
 onMounted(() => {
   todos.value = storage.getItem();
 });
-// watch
+/** 监听清单，同步持久化清单 */
 watch(() => todos.value, () => storage.setItem(todos.value), { deep: true });
-// 穿透
+/**
+ * @param {string} k
+ * @param {Function} v
+ *
+ * 方法穿透 */
 provide('remove', remove);
+
 </script>
 
 <style scoped>

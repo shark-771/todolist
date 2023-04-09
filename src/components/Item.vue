@@ -13,10 +13,9 @@
 <script lang="ts" setup>
 import { inject } from 'vue';
 
-// 注入
-const remove = inject('remove', Function, true);
-// 通信
 defineProps<{ todo: TodoType.Todo }>();
+/** 注入 */
+const remove = inject('remove', Function, true);
 
 </script>
 
